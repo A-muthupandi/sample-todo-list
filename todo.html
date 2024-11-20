@@ -11,8 +11,8 @@
         input[type = "text"] {
             padding: 5px;
         }
-        .todo-item[status="completed"] {
-            display: none;
+        .todo-item[status="completed"] span {
+            text-decoration: line-through;
         }
         #sample-todo-list{
             background-color:black;
@@ -86,12 +86,13 @@
         let btnId = "todo-" + (document.getElementsByClassName("todo-item").length + 1);
         todoItem.setAttribute("id", btnId);
 
-        let button1 = document.createElement("button");
-        button1.textContent = "Edit";
-
-        let button2 = document.createElement("button");
-        button2.textContent = "Delete";
-
+        let addbtn = {
+        edit: document.createElement("button"),
+        delete: document.createElement("button")
+    };
+        addbtn.edit.textContent = "Edit";
+        addbtn.delete.textContent = "Delete";
+        
         let btnComplete = document.createElement("button");
         btnComplete.textContent = "Mark As Completed";
         btnComplete.setAttribute("class", "btn");
@@ -99,8 +100,8 @@
         
         span.textContent = value;
         todoItem.appendChild(span);
-        todoItem.appendChild(button1);
-        todoItem.appendChild(button2);
+        todoItem.appendChild(addbtn.edit);
+        todoItem.appendChild(addbtn.delete);
         todoItem.appendChild(btnComplete);
 
         document.getElementById("todo-list").appendChild(todoItem);
@@ -119,3 +120,4 @@
    </script>
 </body>
 </html>
+
