@@ -86,12 +86,12 @@
         let btnId = "todo-" + (document.getElementsByClassName("todo-item").length + 1);
         todoItem.setAttribute("id", btnId);
 
-        let addbtn = {
+        let addBtn = {
         edit: document.createElement("button"),
         delete: document.createElement("button")
     };
-        addbtn.edit.textContent = "Edit";
-        addbtn.delete.textContent = "Delete";
+        addBtn.edit.textContent = "Edit";
+        addBtn.delete.textContent = "Delete";
         
         let btnComplete = document.createElement("button");
         btnComplete.textContent = "Mark As Completed";
@@ -100,8 +100,8 @@
         
         span.textContent = value;
         todoItem.appendChild(span);
-        todoItem.appendChild(addbtn.edit);
-        todoItem.appendChild(addbtn.delete);
+        todoItem.appendChild(addBtn.edit);
+        todoItem.appendChild(addBtn.delete);
         todoItem.appendChild(btnComplete);
 
         document.getElementById("todo-list").appendChild(todoItem);
@@ -112,12 +112,11 @@
         document.getElementById(btnID).setAttribute("status", "completed");  
     }
     function markAllCompleted() {
-        let todoitems = document.getElementsByClassName("todo-item");
-        for (let i = 0; i < todoitems.length; i++) {
-        todoitems[i].setAttribute("status", "completed");
+        let todoItems = document.getElementsByClassName("todo-item");
+        for (let i = 0; i < todoItems.length; i++) {
+        todoItems[i].setAttribute("status", "completed");
         }
     }
    </script>
 </body>
 </html>
-
